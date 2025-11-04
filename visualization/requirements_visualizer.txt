@@ -1,0 +1,21 @@
+# Requirements for interactive visualization tools
+# Install with: pip install -r requirements_visualizer.txt
+
+# Core dependencies
+numpy>=1.20.0
+
+# Option 1: Vedo-based visualizer (recommended for ease of use)
+vedo>=2023.4.0
+
+# Option 2: Open3D-based visualizer (recommended for performance)
+open3d>=0.18.0
+
+# Option 3: PyGame + ModernGL visualizer (recommended for custom control)
+pygame>=2.5.0
+moderngl>=5.8.0
+PyOpenGL>=3.1.0
+
+# For loading BVH files (if needed)
+# Note: These are already in the main project dependencies
+# scipy>=1.7.0
+# matplotlib>=3.5.0
