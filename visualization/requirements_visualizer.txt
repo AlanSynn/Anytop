@@ -40,3 +40,16 @@ Pillow>=10.0.0   # For texture loading
 
 # Optional: For enhanced FBX support
 # pyfbx  # Better FBX parsing (install separately if needed)
+
+# ============================================================
+# GUI APPLICATIONS (unified viewer with PySide6)
+# ============================================================
+
+# PySide6: Qt bindings for Python
+PySide6>=6.5.0
+
+# PyVistaQt: Qt integration for PyVista (for anytop_viewer.py)
+pyvistaqt>=0.11.0
+
+# Matplotlib backend for Qt (for anytop_viewer_simple.py fallback)
+# matplotlib is already available in main dependencies
