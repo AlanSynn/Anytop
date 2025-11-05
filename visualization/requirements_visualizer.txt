@@ -19,3 +19,24 @@ PyOpenGL>=3.1.0
 # Note: These are already in the main project dependencies
 # scipy>=1.7.0
 # matplotlib>=3.5.0
+
+# ============================================================
+# ADVANCED VISUALIZERS (with full mesh, texture, and skinning support)
+# ============================================================
+
+# Option 4: PyVista-based visualizer (RECOMMENDED for full 3D models)
+# - Best for FBX/OBJ files with textures
+# - High-quality rendering
+# - Excellent texture mapping support
+pyvista>=0.42.0
+
+# Option 5: Trimesh + Vedo advanced visualizer
+# - FBX/OBJ/GLTF loading
+# - Mesh processing
+# - Skinning support
+trimesh>=4.0.0
+pyassimp>=4.1.4  # For FBX loading
+Pillow>=10.0.0   # For texture loading
+
+# Optional: For enhanced FBX support
+# pyfbx  # Better FBX parsing (install separately if needed)

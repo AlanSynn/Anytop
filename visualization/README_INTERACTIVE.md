@@ -4,13 +4,28 @@ This directory contains three Python-based interactive visualizers for skeletal 
 
 ## Overview
 
-We provide three different visualization backends, each with their own strengths:
+We provide **TWO CATEGORIES** of visualizers:
+
+### 📊 **Basic Visualizers** (Skeleton Only)
+
+Display bones and joints without 3D meshes - great for quick previews and debugging.
 
 | Visualizer | Backend | Ease of Use | Performance | Customization | Best For |
 |------------|---------|-------------|-------------|---------------|----------|
 | **Vedo** | VTK | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Quick visualization, scientific use |
 | **Open3D** | Custom | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | High performance, production use |
 | **PyGame+ModernGL** | OpenGL | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Custom shaders, full control |
+
+### 🎨 **Advanced Visualizers** (Full 3D with Textures & Skinning) ⭐ NEW!
+
+Display complete 3D animal models with textures and skeletal skinning - production-ready output.
+
+| Visualizer | Features | Best For |
+|------------|----------|----------|
+| **PyVista** (`pyvista_visualizer.py`) | FBX/OBJ loading, texture mapping, smooth rendering | **RECOMMENDED** for TrueBones models |
+| **Advanced Vedo** (`advanced_visualizer.py`) | Skeletal skinning, multi-mesh, bone weights | Research and custom pipelines |
+
+**📖 See [TRUEBONES_GUIDE.md](TRUEBONES_GUIDE.md) for complete advanced visualization tutorial!**
 
 ## Installation
 
@@ -298,30 +313,71 @@ viz = SkeletonVisualizer(motion_data, skeleton_type='Horse', fps=30)
 viz.show()
 ```
 
+### 🆕 Full 3D Model Visualization with TrueBones
+
+For **production-quality visualization** with complete 3D animal models, textures, and skinning:
+
+**Quick Start:**
+```bash
+# Install PyVista
+pip install pyvista Pillow
+
+# Visualize with TrueBones FBX model
+python pyvista_visualizer.py \
+    --fbx ~/TrueBones_FBX_Zoo/Animals/Horse/Horse.fbx \
+    --motion ../assets/Horse___Walk_123.npy \
+    --skeleton Horse
+```
+
+**Demo without TrueBones:**
+```bash
+# Try the demo with procedural meshes
+python demo_advanced.py --motion ../assets/Horse___Walk_123.npy --skeleton Horse
+```
+
+**Complete Guide:**
+See **[TRUEBONES_GUIDE.md](TRUEBONES_GUIDE.md)** for:
+- TrueBones FBX Zoo setup ($195, 75+ animals)
+- Advanced visualizer features
+- Texture mapping
+- Skeletal skinning
+- Video export
+- Complete workflow examples
+
+**Advanced Visualizers:**
+- `pyvista_visualizer.py` - **Recommended** for FBX/OBJ with textures
+- `advanced_visualizer.py` - For custom skinning and multi-mesh
+- `demo_advanced.py` - Demo with procedural meshes (no TrueBones needed)
+
 ## Comparison with Blender
 
-| Feature | Blender | Interactive Visualizers |
-|---------|---------|-------------------------|
-| Quality | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Speed | ⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Interactive | ⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Ease of Use | ⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Customization | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Rendering | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| Feature | Blender | Basic Visualizers | Advanced Visualizers |
+|---------|---------|-------------------|---------------------|
+| Quality | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Speed | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| Interactive | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Ease of Use | ⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| Customization | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Rendering | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Textures | ⭐⭐⭐⭐⭐ | ❌ | ✅ |
+| Mesh Skinning | ⭐⭐⭐⭐⭐ | ❌ | ✅ |
 
-**Use Blender for:** Final rendering, high-quality videos, complex materials
-**Use Interactive Visualizers for:** Quick preview, debugging, real-time interaction, development workflow
+**Use Blender for:** Final rendering, complex materials, professional production
+**Use Basic Visualizers for:** Quick preview, debugging, skeleton-only visualization
+**Use Advanced Visualizers for:** Production-quality interactive visualization with full 3D models
 
 ## Future Enhancements
 
 Potential improvements you can add:
-- Texture mapping support
-- Skinned mesh rendering
+- ✅ **Texture mapping support** - Implemented in advanced visualizers!
+- ✅ **Skinned mesh rendering** - Implemented in advanced visualizers!
 - Multiple skeleton comparison view
 - Recording animations to video files
-- Custom shader effects (shadows, lighting)
+- Custom shader effects (shadows, lighting, PBR)
 - VR support
 - Network streaming
+- Physics simulation integration
+- Motion editing capabilities
 
 ## C++ Implementation
 
