@@ -27,6 +27,37 @@ Display complete 3D animal models with textures and skeletal skinning - producti
 
 **📖 See [TRUEBONES_GUIDE.md](TRUEBONES_GUIDE.md) for complete advanced visualization tutorial!**
 
+---
+
+## 🍎 **macOS / Intel Mac Users** ⭐ IMPORTANT!
+
+**Optimized for Intel Mac performance and compatibility!**
+
+### Quick Start for macOS:
+```bash
+cd visualization
+./install_macos.sh              # Automated installation
+./launch_viewer_macos.sh        # Launch optimized viewer
+```
+
+### macOS-Specific Features:
+- ✅ **macOS-optimized viewer** (`anytop_viewer_macos.py`)
+- ✅ **Retina display support** with proper scaling
+- ✅ **Performance monitoring** built-in
+- ✅ **Quality presets** for different hardware
+- ✅ **Automated installation** script
+- ✅ **Intel Mac compatibility** tested
+
+**📖 See [MACOS_SETUP.md](MACOS_SETUP.md) for complete macOS guide!**
+
+Common Intel Mac tips:
+- Use **FPS 20-24** instead of 30 for smoother playback
+- Set **Quality to Low/Medium** if experiencing lag
+- macOS-optimized viewer has better performance than full version
+- Simple viewer is most reliable on older Intel Macs
+
+---
+
 ## Installation
 
 ### Install All Dependencies (Recommended)
