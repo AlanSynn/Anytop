@@ -1,0 +1,55 @@
+# Requirements for interactive visualization tools
+# Install with: pip install -r requirements_visualizer.txt
+
+# Core dependencies
+numpy>=1.20.0
+
+# Option 1: Vedo-based visualizer (recommended for ease of use)
+vedo>=2023.4.0
+
+# Option 2: Open3D-based visualizer (recommended for performance)
+open3d>=0.18.0
+
+# Option 3: PyGame + ModernGL visualizer (recommended for custom control)
+pygame>=2.5.0
+moderngl>=5.8.0
+PyOpenGL>=3.1.0
+
+# For loading BVH files (if needed)
+# Note: These are already in the main project dependencies
+# scipy>=1.7.0
+# matplotlib>=3.5.0
+
+# ============================================================
+# ADVANCED VISUALIZERS (with full mesh, texture, and skinning support)
+# ============================================================
+
+# Option 4: PyVista-based visualizer (RECOMMENDED for full 3D models)
+# - Best for FBX/OBJ files with textures
+# - High-quality rendering
+# - Excellent texture mapping support
+pyvista>=0.42.0
+
+# Option 5: Trimesh + Vedo advanced visualizer
+# - FBX/OBJ/GLTF loading
+# - Mesh processing
+# - Skinning support
+trimesh>=4.0.0
+pyassimp>=4.1.4  # For FBX loading
+Pillow>=10.0.0   # For texture loading
+
+# Optional: For enhanced FBX support
+# pyfbx  # Better FBX parsing (install separately if needed)
+
+# ============================================================
+# GUI APPLICATIONS (unified viewer with PySide6)
+# ============================================================
+
+# PySide6: Qt bindings for Python
+PySide6>=6.5.0
+
+# PyVistaQt: Qt integration for PyVista (for anytop_viewer.py)
+pyvistaqt>=0.11.0
+
+# Matplotlib backend for Qt (for anytop_viewer_simple.py fallback)
+# matplotlib is already available in main dependencies
